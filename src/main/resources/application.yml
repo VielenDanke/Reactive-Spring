@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8080
+---
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      username: user
+      password: userpassword
+      host: localhost
+      port: 27017
+      database: reactive
+      authentication-database: admin
+---
+spring:
+  profiles:
+    active: test
+  data:
+    mongodb:
+      username: test
+      password: test
+      host: localhost
+      port: 27018
+      database: local
+      authentication-database: admin
+---
+spring:
+  profiles:
+    active: prod
+  data:
+    mongodb:
+      username: user
+      password: userpassword
+      host: localhost
+      port: 27017
+      database: local
